@@ -14,10 +14,4 @@
     <packaging>jar</packaging>
     <artifactId>monitoring-dto</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>liga.medical</groupId>
-            <artifactId>common-dto</artifactId>
-        </dependency>
-    </dependencies>
 </project>
