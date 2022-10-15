@@ -31,22 +31,22 @@ public class RabbitMQConfiguration {
     }
 
     @Bean
-    public Queue getCommonMonitoringQueue(){
+    public Queue getCommonMonitoringQueue() {
         return new Queue(QueueNames.COMMON_MONITORING_QUEUE_NAME);
     }
 
     @Bean("dailyQueue")
-    public Queue getDailyQueue(){
+    public Queue getDailyQueue() {
         return new Queue(QueueNames.DAILY_QUEUE_NAME);
     }
 
     @Bean("alertQueue")
-    public Queue getAlertQueue(){
+    public Queue getAlertQueue() {
         return new Queue(QueueNames.ALERT_QUEUE_NAME);
     }
 
     @Bean("errorQueue")
-    public Queue getErrorQueue(){
+    public Queue getErrorQueue() {
         return new Queue(QueueNames.ERROR_QUEUE_NAME);
     }
 

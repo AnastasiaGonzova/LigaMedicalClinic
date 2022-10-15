@@ -22,7 +22,7 @@ public class ExchangeConfiguration {
 
     public ExchangeConfiguration(@Qualifier("dailyQueue") Queue dailyQueue,
                                  @Qualifier("alertQueue") Queue alertQueue,
-                                 @Qualifier("errorQueue") Queue errorQueue){
+                                 @Qualifier("errorQueue") Queue errorQueue) {
 
         this.dailyQueue = dailyQueue;
         this.alertQueue = alertQueue;
@@ -30,22 +30,22 @@ public class ExchangeConfiguration {
     }
 
     @Bean
-    public DirectExchange directExchange(){
+    public DirectExchange directExchange() {
         return new DirectExchange(DIRECT_EXCHANGE_NAME);
     }
 
     @Bean
-    public Binding bindingDailyMessage(){
+    public Binding bindingDailyMessage() {
         return BindingBuilder.bind(dailyQueue).to(directExchange()).with(MessageType.DAILY.toString());
     }
 
     @Bean
-    public Binding bindingAlertMessage(){
+    public Binding bindingAlertMessage() {
         return BindingBuilder.bind(alertQueue).to(directExchange()).with(MessageType.ALERT.toString());
     }
 
     @Bean
-    public Binding bindingErrorMessage(){
+    public Binding bindingErrorMessage() {
         return BindingBuilder.bind(errorQueue).to(directExchange()).with(MessageType.ERROR.toString());
     }
 }

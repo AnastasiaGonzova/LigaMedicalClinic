@@ -23,12 +23,11 @@ public class RabbitRouterServiceImpl implements RabbitRouterService {
     @Override
     public void routeMessage(String message) {
         rabbitTemplate.setExchange(ExchangeConfiguration.DIRECT_EXCHANGE_NAME);
-
-        try{
+        try {
             RequestMessageDto messageDto = objectMapper.readValue(message, RequestMessageDto.class);
             rabbitTemplate.convertAndSend(messageDto.getMessageType().toString(), message);
 
-        } catch(Exception e){
+        } catch (Exception e) {
             rabbitTemplate.convertAndSend(MessageType.ERROR.toString(), e.getMessage());
         }
     }
