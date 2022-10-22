@@ -15,10 +15,8 @@ import liga.medical.medicalmonitoring.core.domain.MessageType;
 @RequiredArgsConstructor
 public class AntiS {
 
-    @NonNull
     private MessageType type;
 
-    @NonNull
     private String messageText;
 
     @NonNull
